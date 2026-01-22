@@ -1,6 +1,6 @@
 {
   "name": "@satriobagasp/tributejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fork of tributejs with custom modifications",
   "main": "dist/tribute.js",
   "module": "dist/tribute.esm.js",
