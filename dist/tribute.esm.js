@@ -118,6 +118,9 @@ class TributeEvents {
 
   input(instance, event) {
     instance.inputEvent = true;
+    if (instance.skipNextKeyCode) {
+      instance.skipNextKeyCode = false;
+    }
     instance.keyup.call(this, instance, event);
   }
 
@@ -211,7 +214,6 @@ class TributeEvents {
   getKeyCode(instance, el, event) {
 
     if (instance.skipNextKeyCode) {
-      instance.skipNextKeyCode = false;
       return false;
     }
 
