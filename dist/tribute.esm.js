@@ -209,6 +209,12 @@ class TributeEvents {
   }
 
   getKeyCode(instance, el, event) {
+
+    if (instance.skipNextKeyCode) {
+      instance.skipNextKeyCode = false;
+      return false;
+    }
+
     let tribute = instance.tribute;
     let info = tribute.range.getTriggerInfo(
       false,
@@ -1703,6 +1709,9 @@ class Tribute {
       this.isActive = false;
       this.menuSelected = 0;
       this.current = {};
+      if (this.events) {
+        this.events.skipNextKeyCode = true;
+      }
     }
   }
 
