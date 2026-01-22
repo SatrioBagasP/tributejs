@@ -1,7 +1,7 @@
 {
-  "name": "tributejs",
-  "version": "5.1.4",
-  "description": "Native ES6 @mentions",
+  "name": "@satriobagasp/tributejs",
+  "version": "1.0.0",
+  "description": "Fork of tributejs with custom modifications",
   "main": "dist/tribute.js",
   "module": "dist/tribute.esm.js",
   "browser": "dist/tribute.min.js",
