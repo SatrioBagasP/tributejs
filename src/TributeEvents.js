@@ -167,6 +167,12 @@ class TributeEvents {
   }
 
   getKeyCode(instance, el, event) {
+
+    if (instance.skipNextKeyCode) {
+      instance.skipNextKeyCode = false;
+      return false;
+    }
+
     let char;
     let tribute = instance.tribute;
     let info = tribute.range.getTriggerInfo(
@@ -215,7 +221,7 @@ class TributeEvents {
 
         if (
           tribute.current.mentionText.length >=
-            tribute.current.collection.menuShowMinLength &&
+          tribute.current.collection.menuShowMinLength &&
           tribute.inputEvent
         ) {
           tribute.showMenuFor(el, true);

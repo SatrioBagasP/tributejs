@@ -89,7 +89,7 @@ class Tribute {
 
             return (
               noMatchTemplate ||
-              function() {
+              function () {
                 return "<li>No Match Found!</li>";
               }.bind(this)
             );
@@ -146,7 +146,7 @@ class Tribute {
 
             return (
               noMatchTemplate ||
-              function() {
+              function () {
                 return "<li>No Match Found!</li>";
               }.bind(this)
             );
@@ -344,7 +344,7 @@ class Tribute {
           typeof this.current.collection.noMatchTemplate === "function"
             ? (ul.innerHTML = this.current.collection.noMatchTemplate())
             : (ul.innerHTML = this.current.collection.noMatchTemplate);
-            this.range.positionMenuAtCaret(scrollTo);
+          this.range.positionMenuAtCaret(scrollTo);
         }
 
         return;
@@ -467,6 +467,10 @@ class Tribute {
       this.isActive = false;
       this.menuSelected = 0;
       this.current = {};
+      // Set flag untuk skip detection keyCode pada keyup berikutnya
+      if (this.events) {
+        this.events.skipNextKeyCode = true;
+      }
     }
   }
 
